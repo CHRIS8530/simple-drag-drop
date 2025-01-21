@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Drag and Drop</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="main-container">
+        <div class="left-container">
+            <div class="box" id="left-box" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <div class="draggable" id="item1" draggable="true">Name1</div>
+                <div class="draggable" id="item2" draggable="true">Name2</div>
+                <div class="draggable" id="item3" draggable="true">Name3</div>
+            </div>
+        </div>
+        <div class="right-container">
+            <div class="drop-box" id="drop-box" ondrop="drop(event)" ondragover="allowDrop(event)">
+            </div>
+        </div>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>
