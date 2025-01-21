@@ -4,6 +4,9 @@ const draggableItems = document.querySelectorAll('.draggable');
 draggableItems.forEach(item => {
     item.addEventListener('dragstart', dragStart);
     item.addEventListener('dragend', dragEnd);
+    item.addEventListener('touchstart', touchStart);
+    item.addEventListener('touchmove', touchMove);
+    item.addEventListener('touchend', touchEnd);
 });
 
 // Handle the dragstart event
@@ -21,6 +24,54 @@ function dragEnd(e) {
     if (!e.target.parentElement.classList.contains('drop-box')) {
         leftBox.appendChild(e.target);
     }
+}
+
+// Handle the touchstart event
+function touchStart(e) {
+    e.target.classList.add('hide');
+    e.target.style.position = 'absolute';
+    e.target.style.zIndex = 1000;
+    document.body.append(e.target);
+    moveAt(e.touches[0].pageX, e.touches[0].pageY);
+
+    function moveAt(pageX, pageY) {
+        e.target.style.left = pageX - e.target.offsetWidth / 2 + 'px';
+        e.target.style.top = pageY - e.target.offsetHeight / 2 + 'px';
+    }
+
+    function onTouchMove(event) {
+        moveAt(event.touches[0].pageX, event.touches[0].pageY);
+    }
+
+    document.addEventListener('touchmove', onTouchMove);
+
+    e.target.ontouchend = function() {
+        document.removeEventListener('touchmove', onTouchMove);
+        e.target.classList.remove('hide');
+        e.target.style.zIndex = '';
+        e.target.style.position = '';
+    };
+}
+
+// Handle the touchmove event
+function touchMove(e) {
+    e.preventDefault();
+}
+
+// Handle the touchend event
+function touchEnd(e) {
+    const leftBox = document.getElementById('left-box');
+    const dropBox = document.getElementById('drop-box');
+    const touch = e.changedTouches[0];
+    const element = document.elementFromPoint(touch.clientX, touch.clientY);
+
+    if (element === dropBox || dropBox.contains(element)) {
+        dropBox.appendChild(e.target);
+    } else {
+        leftBox.appendChild(e.target);
+    }
+
+    e.target.classList.remove('hide');
 }
 
 /* Drop targets */

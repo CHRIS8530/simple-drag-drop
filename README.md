@@ -6,6 +6,7 @@ This project showcases a basic drag-and-drop functionality using vanilla JavaScr
 
 - Drag and drop items between two boxes.
 - Written in plain JavaScript without any libraries.
+- Supports both desktop and mobile devices.
 
 ## Usage
 
@@ -17,6 +18,9 @@ This project showcases a basic drag-and-drop functionality using vanilla JavaScr
 
 2. **Open in Browser**: 
     - Open the `index.html` file in your web browser to use the drag-and-drop functionality.
+
+3. **Live Preview**:
+    - You can also view the live preview on GitHub Pages: [GitHub Pages URL]
 
 ## License
 

@@ -91,3 +91,26 @@ h1 {
 .hide {
     display: none;
 }
+
+/* Responsive design for smaller screens */
+@media (max-width: 600px) {
+    .main-container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .left-container, .right-container {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .box, .drop-box {
+        width: 90%;
+        height: auto;
+    }
+
+    .draggable {
+        width: 90%;
+        height: auto;
+    }
+}
