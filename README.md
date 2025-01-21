@@ -11,7 +11,7 @@ This project showcases a basic drag-and-drop functionality using vanilla JavaScr
 
 1. **Clone Repository**:
     ```bash
-    git clone <URL-of-your-GitHub-repo>
+    git clone https://github.com/CHRIS8530/simple-drag-drop.git
     cd simple-drag-drop
     ```
 
