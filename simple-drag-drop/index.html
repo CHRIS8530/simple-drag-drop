@@ -9,17 +9,18 @@
 <body>
     <div class="main-container">
         <div class="left-container">
-            <h1>Simple Drag and Drop</h1>
-            <div class="box">
-                <div class="draggable" id="item1" draggable="true">Alice</div>
-                <div class="draggable" id="item2" draggable="true">Bob</div>
-                <div class="draggable" id="item3" draggable="true">Charlie</div>
+            <div class="box" id="left-box" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <div class="draggable" id="item1" draggable="true">Name1</div>
+                <div class="draggable" id="item2" draggable="true">Name2</div>
+                <div class="draggable" id="item3" draggable="true">Name3</div>
             </div>
         </div>
         <div class="right-container">
-            <div class="drop-box"></div>
+            <div class="drop-box" id="drop-box" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <!-- Removed 123, 456, 789 divs -->
+            </div>
         </div>
     </div>
-    <script src="script.js"></script>
+    <script src="scripts.js"></script>
 </body>
 </html>

@@ -13,11 +13,10 @@ function dragStart(e) {
     }, 0);
 }
 
-
 /* Drop targets */
-const boxes = document.querySelectorAll('.box');
+const dropBoxes = document.querySelectorAll('.box, .drop-box');
 
-boxes.forEach(box => {
+dropBoxes.forEach(box => {
     box.addEventListener('dragenter', dragEnter);
     box.addEventListener('dragover', dragOver);
     box.addEventListener('dragleave', dragLeave);
@@ -46,9 +45,18 @@ function drop(e) {
     const id = e.dataTransfer.getData('text/plain');
     const draggable = document.getElementById(id);
 
-    // Append it to the drop target
+    // Append the draggable item to the drop target
     e.target.appendChild(draggable);
 
     // Unhide the draggable element
     draggable.classList.remove('hide');
+
+    // Ensure the draggable item retains its size and styles
+    draggable.style.height = '28.4px';
+    draggable.style.width = '75px';
+    draggable.style.margin = '10px';
+    draggable.style.position = 'relative';
+    draggable.style.left = '0';
+    draggable.style.top = '0';
+    draggable.style.transform = 'translate(0, 0)';
 }
