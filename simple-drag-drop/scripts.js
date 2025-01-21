@@ -3,6 +3,7 @@ const draggableItems = document.querySelectorAll('.draggable');
 
 draggableItems.forEach(item => {
     item.addEventListener('dragstart', dragStart);
+    item.addEventListener('dragend', dragEnd);
 });
 
 // Handle the dragstart event
@@ -11,6 +12,15 @@ function dragStart(e) {
     setTimeout(() => {
         e.target.classList.add('hide');
     }, 0);
+}
+
+// Handle the dragend event
+function dragEnd(e) {
+    e.target.classList.remove('hide');
+    const leftBox = document.getElementById('left-box');
+    if (!e.target.parentElement.classList.contains('drop-box')) {
+        leftBox.appendChild(e.target);
+    }
 }
 
 /* Drop targets */
