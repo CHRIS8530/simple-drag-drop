@@ -1,0 +1,67 @@
+/* General body styling with flexbox layout */
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Styling for form pieces and form builder containers */
+#form-pieces, #form-builder {
+    width: 100%;
+    max-width: 600px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+/* Border for form pieces container */
+#form-pieces {
+    border-bottom: 1px solid #ccc;
+}
+
+/* Styling for individual form pieces */
+.form-piece {
+    margin-bottom: 10px;
+    cursor: grab;
+}
+
+/* Styling for form builder area */
+.builder-area {
+    border: 1px dashed #ccc;
+    padding: 10px;
+    min-height: 300px;
+}
+
+/* Responsive design for larger screens */
+@media (min-width: 600px) {
+    body {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+    #form-pieces {
+        width: 30%;
+        border-right: 1px solid #ccc;
+        border-bottom: none;
+    }
+    #form-builder {
+        width: 70%;
+    }
+}
+
+/* Container styling for wrapping inputs and labels */
+.container {
+    width: 120px; /* Set the desired width */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Background colors for each form piece type */
+.form-piece.text { background-color: #FFD700; } /* Gold */
+.form-piece.checkbox { background-color: #FF6347; } /* Tomato */
+.form-piece.radio { background-color: #ADFF2F; } /* Green Yellow */
+.form-piece.textarea { background-color: #87CEEB; } /* Sky Blue */
+.form-piece.select { background-color: #FF69B4; } /* Hot Pink */
+.form-piece.date { background-color: #FFFACD; } /* Lemon Chiffon (Light Yellow) */
+.form-piece.number { background-color: #32CD32; } /* Lime Green */
+.form-piece.file { background-color: #FF4500; } /* Orange Red */
+.form-piece.panel { background-color: #DAA520; } /* Golden Rod */

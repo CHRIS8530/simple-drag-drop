@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minimal Test - Form Builder</title>
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Container for draggable form pieces -->
+    <div id="form-pieces">
+        <h3>Form Pieces</h3>
+        <!-- Draggable form pieces -->
+        <div class="form-piece" draggable="true" data-type="text">Text Input</div>
+        <div class="form-piece" draggable="true" data-type="checkbox">Checkbox</div>
+        <div class="form-piece" draggable="true" data-type="radio">Radio Button</div>
+        <div class="form-piece" draggable="true" data-type="textarea">Textarea</div>
+        <div class="form-piece" draggable="true" data-type="select">Select Dropdown</div>
+        <div class="form-piece" draggable="true" data-type="date">Date Picker</div>
+        <div class="form-piece" draggable="true" data-type="number">Number Input</div>
+        <div class="form-piece" draggable="true" data-type="file">File Upload</div>
+        <div class="form-piece" draggable="true" data-type="panel">Panel</div>
+    </div>
+    <!-- Container for form builder area -->
+    <div id="form-builder">
+        <h3>Build Your Form</h3>
+        <!-- Area where users can drop form pieces -->
+        <div class="builder-area" id="builder-area"></div>
+    </div>
+    <!-- Link to external JavaScript file -->
+    <script src="scripts.js"></script>
+</body>
+</html>
